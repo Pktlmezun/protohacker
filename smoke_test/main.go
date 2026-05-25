@@ -13,15 +13,15 @@ func handleConnection(conn net.Conn) {
 
 	reader := bufio.NewReader(conn)
 	message := []byte{}
-	i := 0
+	// i := 0
 	for {
 		new_byte, err := reader.ReadByte()
 		if err == io.EOF {
 			break
 		}
-		fmt.Println(i, string(message))
+		// fmt.Println(i, string(message))
 		message = append(message, new_byte)
-		i++
+		// i++
 	}
 	fmt.Println(string(message))
 
